@@ -1,0 +1,10 @@
+.contenedor {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+input {
+    border-color: black;
+}
