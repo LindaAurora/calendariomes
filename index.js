@@ -6,12 +6,14 @@ const yearInput = document.getElementById("year");
 const laborales = document.getElementById("laborales");
 
 
+
 // Ejectar una función cuando se haga click en el botón
 function festivos(parametro) {
   // Acceder a los valores de los inputs
   const diaValor = dayInput.value
   const mesValor = monthInput.value
   const aynoValor = yearInput.value
+  
 
   // Crear una fecha con los valores de los inputs
   const fecha = new Date(aynoValor, mesValor - 1, diaValor);
@@ -20,13 +22,26 @@ function festivos(parametro) {
 
   // Comprobar si el dia es laboral o festivo
   let mensaje = ""
+  const semana  = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"] 
+  // let manzana = semana
+
+  manzana = semana[diaIndex] 
+
+  // diaIndex    // 0 - 7
+  // semana = ["hola", "mundo"]
+  // semana[diaIndex]    // hola
+
   switch (diaIndex) {
-    case 0: case 6:
-      mensaje = "Dia no laboral"
+    
+    case 0: 
+    case 6:
+      mensaje = manzana +  "Dia no laboral"
       break;
     default:
-      mensaje = "Dia laboral"
+        mensaje = manzana + "Dia laboral"
   }
+
+
 
   // Imprimir el mensaje en el DOM
   laborales.textContent = mensaje;
